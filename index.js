@@ -10,6 +10,10 @@ const tasks = [
   {
     id: 3,
     task: "Create your own shine"
+  },
+  {
+    id: 4,
+    task: "Muhammad Hassan Raza: Web & Mobile App Developer 😎📱🚀"
   }
 ]
 
@@ -17,23 +21,27 @@ import express from 'express'
 const app = express()
 const PORT = 4000;
 
+// Application level middleware
+function middleware(req, res, next){
+  console.log("middleware ==>", Date.now());
+  next()
+}
+
+app.use(middleware) // ye middleware pure app ke uper laga howa hai har request par chalega.
+
 app.get('/', (req, res)=>{
-  console.log("req==>", req);
   res.status(200).send(tasks)
 })  
 
 app.post('/', (req, res)=>{
-  console.log("req==>", req);
   res.send('Post request by Hassan Raza')
 }) 
 
-app.put('/', (req, res)=>{
-  console.log("req==>", req);
+app.put('/', (req, res)=>{;
   res.send('Put request by Hassan Raza')
 }) 
 
 app.delete('/', (req, res)=>{
-  console.log("req==>", req);
   res.send('Delete request by Hassan Raza')
 })  
  
