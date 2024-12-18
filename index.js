@@ -18,16 +18,21 @@ const tasks = [
 ]
 
 import express from 'express'
+import morgan from 'morgan';
 const app = express()
 const PORT = 4000;
 
+//morgan install from npm. ye konsi api call howi h wo check karne ke liye use krte hain.
+app.use(morgan("tiny")) // samajho ye application level middleware lag gaya h. ye req ki details batayga konsi req call howi h or konse route pe call howi hai. 
+
+
 // Application level middleware
 function middleware(req, res, next){
-  console.log("middleware ==>", Date.now());
+  console.log("middleware ==>", new Date());
   next()
 }
-
 app.use(middleware) // ye middleware pure app ke uper laga howa hai har request par chalega.
+
 
 app.get('/', (req, res)=>{
   res.status(200).send(tasks)
