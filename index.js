@@ -22,23 +22,29 @@ import morgan from 'morgan';
 const app = express()
 const PORT = 4000;
 
-//morgan install from npm. ye konsi api call howi h wo check karne ke liye use krte hain.
-app.use(morgan("tiny")) // samajho ye application level middleware lag gaya h. ye req ki details batayga konsi req call howi h or konse route pe call howi hai. 
+app.use(morgan("tiny")) //morgan install from npm. ye konsi api call howi h wo check karne ke liye use krte hain. samajho ye application level middleware lag gaya h. ye req ki details batayga konsi req call howi h or konse route pe call howi hai. 
+app.use(express.json()) //ham body main jo data send krte hain ye usko json main convert krta h. ye nhi lagaynge to req.body main undefined ayga.
 
 
-// Application level middleware
 function middleware(req, res, next){
-  console.log("middleware ==>", new Date());
+  req.requestBy = 'Hassan Raza'  //ham middleware ke through koi key bhi add karsakte hain.
+  // res.status(500).send('System main koi masla hai.') //ham chahen to res:response ko yahin se rok sakte hain.
   next()
 }
-app.use(middleware) // ye middleware pure app ke uper laga howa hai har request par chalega.
+app.use(middleware) 
+// Summary of middleware //
+// ye middleware pure app ke uper laga howa hai means application level par laga howa h har request par chalega.
+// ham chahen to route level pe lagaden means only get,post,put,delete etc par.
+// agar next() nhi lagaynge to load hota rahe ga age nhi jayga.
 
 
 app.get('/', (req, res)=>{
   res.status(200).send(tasks)
+  console.log('Request By ==>', req.requestBy);
 })  
 
 app.post('/', (req, res)=>{
+  console.log('req body==>', req.body);
   res.send('Post request by Hassan Raza')
 }) 
 
