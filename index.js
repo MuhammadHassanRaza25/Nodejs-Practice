@@ -20,6 +20,10 @@ const tasks = [
   {
     id: 4,
     task: "Muhammad Hassan Raza: Web & Mobile App Developer 😎📱🚀"
+  },
+  {
+    id: 5,
+    task: "Think less do more"
   }
 ]
 
