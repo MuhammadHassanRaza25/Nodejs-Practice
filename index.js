@@ -24,6 +24,10 @@ const tasks = [
   {
     id: 5,
     task: "Think less do more"
+  },
+   {
+    id: 6,
+    task: "MERN Stack Expert"
   }
 ]
 
