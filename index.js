@@ -41,7 +41,7 @@ function middleware(req, res, next){
   next()
 }
 app.use(middleware) 
-// Summary of middleware //
+// Summary of Middleware //
 // ye middleware pure app ke uper laga howa hai means application level par laga howa h har request par chalega.
 // ham chahen to route level pe lagaden means only get,post,put,delete etc par.
 // agar next() nhi lagaynge to load hota rahe ga age nhi jayga.
@@ -75,11 +75,11 @@ app.listen(PORT,()=>{
 
 // SUMMARY OF THIS CODE  //
 
-// All Requests Summary
+// All Requests Summary //
 // jab bhi request ati hai to callback milta hai or usme 2chezain milti hain. 1.request 2.response
 // response:res dena zarori hai agar ham response:res nahi send karenge to localhost par reload hota rahega.
 
-// All Request Status
+// All Request Status //
 // status: 200 OK. Request is successfull.
 // status: 201. Jab DB main koi data add ho or successfully get hojaye to 201 status dete hain.
 // status: 400 Bad Request. Server ko request samajh nahi aayi.
