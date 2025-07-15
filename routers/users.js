@@ -27,7 +27,7 @@ router.post("/", (req, res)=>{
        })
 })
 
-router.get("/:id", (req, res)=>{     //id dynamic hogi isliye : lagaya h id ke ilwa kuchbhi likh sakte hain jo likhenge us name se data miljayega.
+router.get("/:id", (req, res)=>{     
     const user = users.find((data)=> data.id == req.id) 
     users.push({fullName, email, id: users.length+1})
     if(!user){
@@ -44,5 +44,6 @@ router.get("/:id", (req, res)=>{     //id dynamic hogi isliye : lagaya h id ke i
         msg: "User Found Successsfully"
     })
 })
+// Summary: id dynamic hogi isliye : lagaya h id ke ilwa kuchbhi likh sakte hain jo likhenge us name se data miljayega. // 
 
 export default router;
