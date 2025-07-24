@@ -7,7 +7,7 @@ const PORT = 4000;
 const tasks = [
   {
     id: 1,
-    task: "Nothing is impossible, everything is possible"
+    task: "Nothing is impossible"
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const tasks = [
   },
   {
     id: 4,
-    task: "Muhammad Hassan Raza: Web & Mobile App Developer 😎📱🚀"
+    task: "Muhammad Hassan Raza: Sofyware Engineer 📱🚀"
   },
   {
     id: 5,
